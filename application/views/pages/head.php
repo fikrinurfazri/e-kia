@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sistem Pengelola Nomor Surat</title>
-    <link rel="shortcut icon" type="image/png" href="<?= base_url() ?>assets/images/logos/logo.png" />
+    <title>Sistem Kesehatan Ibu Online</title>
+    <!-- <link rel="shortcut icon" type="image/png" href="<?= base_url() ?>assets/images/logos/logo.png" /> -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/styles.min.css" />
     <style>
         /* CSS untuk mengatur tampilan video menjadi landscape */

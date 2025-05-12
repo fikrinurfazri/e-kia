@@ -25,9 +25,15 @@ class Auth extends CI_Controller
         $password = $this->input->post('password');
 
         if ($this->auth_model->login($username, $password)) {
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Berhasil Login</div>');
+            $level = $this->session->userdata(Auth_model::SESSION_LEVEL);
 
-            redirect('dashboard');
+            if ($level == 1) {
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Berhasil Login</div>');
+                redirect('admin');
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Berhasil Login</div>');
+                redirect('adminpoktan');
+            }
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Username atau password salah</div>');
         }

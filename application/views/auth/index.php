@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login APNS</title>
+    <title>Login SIKI</title>
     <link rel="shortcut icon" type="image/png" href="<?= base_url() ?>assets/images/logos/logo.png" />
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/styles.min.css" />
 </head>
@@ -19,7 +19,8 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <h4 class="fw-bold text-center py-3 w-100">
-                                    <img src="<?= base_url('assets/images/logos/diskominfo.png') ?>" width="200px" alt="">
+                                    <!-- <img src="<?= base_url('assets/images/logos/diskominfo.png') ?>" width="200px" alt=""> -->
+                                    LOGO
                                 </h4>
                                 <!-- <p class="text-center">COLLECTION</p> -->
                                 <form action="" method="post">

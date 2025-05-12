@@ -3,7 +3,7 @@
     <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
             <a href="<?= base_url('dashboard') ?>" class="text-nowrap logo-img">
-                <img src="<?= base_url() ?>assets/images/logos/diskominfo.png" width="180" alt="" />
+                <!-- <img src="<?= base_url() ?>assets/images/logos/diskominfo.png" width="180" alt="" /> --> LOGO
             </a>
             <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                 <i class="ti ti-x fs-8"></i>
@@ -27,35 +27,26 @@
                     </li>
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                        <span class="hide-menu">PERSURATAN</span>
+                        <span class="hide-menu">MASTER</span>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link <?= $this->router->class == 'surat-masuk' ? 'active' : ''; ?> " href=" <?= base_url() ?>surat-masuk" aria-expanded="false">
+                        <a class="sidebar-link <?= $this->router->class == 'master/user' ? 'active' : ''; ?> " href=" <?= base_url() ?>master/user" aria-expanded="false">
                             <span>
                                 <i class="ti ti-article"></i>
                             </span>
-                            <span class="hide-menu">Surat Masuk</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link <?= $this->router->class == 'surat-keluar' ? 'active' : ''; ?> " href=" <?= base_url() ?>surat-keluar" aria-expanded="false">
-                            <span>
-                                <i class="ti ti-article"></i>
-                            </span>
-                            <span class="hide-menu">Surat Keluar</span>
+                            <span class="hide-menu">User</span>
                         </a>
                     </li>
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                        <span class="hide-menu">SETTINGS</span>
+                        <span class="hide-menu">PEMANTAUAN</span>
                     </li>
-
                     <li class="sidebar-item">
                         <a class="sidebar-link <?= $this->router->class == 'pegawai' ? 'active' : ''; ?> " href=" <?= base_url() ?>pegawai" aria-expanded="false">
                             <span>
                                 <i class="ti ti-mood-happy"></i>
                             </span>
-                            <span class="hide-menu">Pegawai</span>
+                            <span class="hide-menu">Kontrol TTD</span>
                         </a>
                     </li>
                 <?php else : ?>
@@ -64,23 +55,23 @@
                         <span class="hide-menu">Home</span>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link <?= $this->router->class == 'dashboard' ? 'active' : ''; ?> " href=" <?= base_url() ?>dashboard" aria-expanded="false">
+                        <a class="sidebar-link <?= $this->router->class == 'pasien' ? 'active' : ''; ?> " href=" <?= base_url() ?>pasien" aria-expanded="false">
                             <span>
                                 <i class="ti ti-layout-dashboard"></i>
                             </span>
-                            <span class="hide-menu">Dashboard</span>
+                            <span class="hide-menu">Profile</span>
                         </a>
                     </li>
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                        <span class="hide-menu">PERSURATAN</span>
+                        <span class="hide-menu">Informasi Kesehatan</span>
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link <?= $this->router->class == 'nomor-surat' ? 'active' : ''; ?> " href=" <?= base_url() ?>nomor-surat" aria-expanded="false">
                             <span>
                                 <i class="ti ti-article"></i>
                             </span>
-                            <span class="hide-menu">Nomor Surat</span>
+                            <span class="hide-menu">TTD</span>
                         </a>
                     </li>
                 <?php endif ?>

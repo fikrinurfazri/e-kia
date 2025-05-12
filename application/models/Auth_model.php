@@ -4,6 +4,7 @@ class Auth_model extends CI_Model
 {
     private $_table = "user";
     const SESSION_KEY = 'id_user';
+    const SESSION_LEVEL = 'level';
 
     public function rules()
     {
@@ -37,8 +38,11 @@ class Auth_model extends CI_Model
             return FALSE;
         }
 
-        // bikin session
-        $this->session->set_userdata([self::SESSION_KEY => $user->id_user]);
+        // buat session
+        $this->session->set_userdata([
+            self::SESSION_KEY => $user->id_user,
+            self::SESSION_LEVEL => $user->level
+        ]);
         $this->_update_last_login($user->id_user);
 
         return $this->session->has_userdata(self::SESSION_KEY);
@@ -55,19 +59,24 @@ class Auth_model extends CI_Model
         return $query->row();
     }
 
+    public function get_user_by_username($username)
+    {
+        $query = $this->db->get_where($this->_table, ['username' => $username]);
+        return $query->row();
+    }
+
     public function logout()
     {
         $this->session->unset_userdata(self::SESSION_KEY);
+        $this->session->unset_userdata(self::SESSION_LEVEL);
         return !$this->session->has_userdata(self::SESSION_KEY);
     }
 
     private function _update_last_login($id)
     {
-        $id_user = $this->session->userdata(self::SESSION_KEY);
         $data = [
             'last_login' => date("Y-m-d H:i:s"),
         ];
-
-        return $this->db->update($this->_table, $data, ['id_user' => $id_user]);
+        return $this->db->update($this->_table, $data, ['id_user' => $id]);
     }
 }
